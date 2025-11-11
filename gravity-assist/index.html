@@ -4,85 +4,88 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gravity Assist Sandbox</title>
-  <script type="module" crossorigin src="./assets/index-D_dPBWAz.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-CrjHUkLV.css">
+  <script type="module" crossorigin src="./assets/index-B21vBc6S.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-B_xB-ZTH.css">
 </head>
 <body>
     <div class="container">
-        <header>
-            <h1>Gravity Assist Sandbox</h1>
+        <header class="header">
+            <h1 class="header__title">Gravity Assist Sandbox</h1>
         </header>
 
         <div class="main-layout">
             <!-- Controls Section -->
-            <section class="controls-section">
+            <section class="controls-section panel">
                 <div class="controls-grid">
-                    <!-- Column 1: Main Parameters -->
-                    <div class="controls-column">
+                    <!-- Trajectory Parameters -->
+                    <div class="control-group">
+                        <h3 class="control-group__label">Trajectory Parameters</h3>
+
                         <!-- Planet Speed -->
-                        <div class="control-group">
-                            <div class="control-header">
-                                <label for="v0">v₀ (planet speed) [km/s]:</label>
-                                <input type="number" id="v0" step="0.1" value="20">
+                        <div class="control">
+                            <div class="control__row">
+                                <label class="control__label">v₀ (planet speed)</label>
+                                <span class="control__value" id="v0-value">20 km/s</span>
                             </div>
                             <input type="range" id="v0-slider" min="0" max="40" step="0.1" value="20">
                         </div>
 
                         <!-- Probe Speed -->
-                        <div class="control-group">
-                            <div class="control-header">
-                                <label for="v">v (probe speed) [km/s]:</label>
-                                <input type="number" id="v" step="0.1" value="10">
+                        <div class="control">
+                            <div class="control__row">
+                                <label class="control__label">v (probe speed)</label>
+                                <span class="control__value" id="v-value">10 km/s</span>
                             </div>
                             <input type="range" id="v-slider" min="0" max="50" step="0.1" value="10">
                         </div>
 
                         <!-- Approach Angle -->
-                        <div class="control-group">
-                            <div class="control-header">
-                                <label for="theta">θ (approach angle) [deg]:</label>
-                                <input type="number" id="theta" step="1" value="90">
+                        <div class="control">
+                            <div class="control__row">
+                                <label class="control__label">θ (approach angle)</label>
+                                <span class="control__value" id="theta-value">90°</span>
                             </div>
                             <input type="range" id="theta-slider" min="-180" max="180" step="1" value="90">
                         </div>
 
                         <!-- Impact Parameter -->
-                        <div class="control-group">
-                            <div class="control-header">
-                                <label for="b">b (impact parameter) [km]:</label>
-                                <input type="number" id="b" step="100" value="100000">
+                        <div class="control">
+                            <div class="control__row">
+                                <label class="control__label">b (impact parameter)</label>
+                                <span class="control__value" id="b-value">100 000 km</span>
                             </div>
                             <input type="range" id="b-slider" min="-300000" max="300000" step="100" value="100000">
                         </div>
                     </div>
 
-                    <!-- Column 2: View & Animation -->
-                    <div class="controls-column">
+                    <!-- View & Animation Controls -->
+                    <div class="control-group">
+                        <h3 class="control-group__label">View & Animation</h3>
+
                         <!-- Zoom Control -->
-                        <div class="control-group">
-                            <div class="control-header">
-                                <label for="zoom">Zoom:</label>
-                                <input type="number" id="zoom" step="0.1" value="1" min="0.1" max="10">
+                        <div class="control">
+                            <div class="control__row">
+                                <label class="control__label">Zoom</label>
+                                <span class="control__value" id="zoom-value">1.0×</span>
                             </div>
                             <input type="range" id="zoom-slider" min="0.1" max="10" step="0.1" value="1">
                         </div>
 
-                        <div class="control-group">
-                            <div class="control-header">
-                                <label for="speed">Animation Speed:</label>
-                                <input type="number" id="speed" step="0.1" value="1" min="0.1" max="5">
+                        <!-- Animation Speed -->
+                        <div class="control">
+                            <div class="control__row">
+                                <label class="control__label">Animation Speed</label>
+                                <span class="control__value" id="speed-value">1.0×</span>
                             </div>
                             <input type="range" id="speed-slider" min="0.1" max="5" step="0.1" value="1">
                         </div>
 
-                        <!-- Animation Controls -->
-                        <div class="control-group">
-                            <div class="control-header">
-                                <label>
-                                    <input type="checkbox" id="animate">
-                                    Enable Animation
-                                </label>
-                            </div>
+                        <!-- Enable Animation -->
+                        <div class="control">
+                            <label class="control__label">
+                                <input type="checkbox" id="animate">
+                                Enable Animation
+                            </label>
                         </div>
                     </div>
                 </div>
@@ -95,7 +98,8 @@
             </div>
 
             <!-- Results Section -->
-            <section class="results-section">
+            <section class="results-section panel">
+                <h2 class="panel__title">Results</h2>
                 <div class="readouts">
                     <table>
                         <tr>

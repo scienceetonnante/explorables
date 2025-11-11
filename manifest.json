@@ -6,12 +6,20 @@
       "description": "Explore the oscillations of a simple pendulum and discover how length and initial angle affect periodic motion.",
       "thumbnail": "thumbnail.png",
       "tags": ["physics", "mechanics"],
-      "date": "2025-01-15"
+      "date": "2025-11-11"
     },
 	{
       "id": "gravity-assist",
       "title": "Gravity assist",
       "description": "Gravity assist and slingshot.",
+      "thumbnail": "thumbnail.png",
+      "tags": ["physics", "mechanics"],
+      "date": "2025-11-11"
+    },
+		{
+      "id": "newton-cannon",
+      "title": "Newton Cannon",
+      "description": "Newton Cannon",
       "thumbnail": "thumbnail.png",
       "tags": ["physics", "mechanics"],
       "date": "2025-11-11"
