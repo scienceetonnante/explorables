@@ -1,0 +1,37 @@
+<svg width="400" height="300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background gradient -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="bobGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2563eb;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="400" height="300" fill="url(#bgGradient)"/>
+
+  <!-- Arc showing pendulum path -->
+  <path d="M 100 80 A 140 140 0 0 1 300 80" stroke="rgba(255,255,255,0.2)" stroke-width="2" fill="none" stroke-dasharray="5,5"/>
+
+  <!-- Pendulum rod -->
+  <line x1="200" y1="60" x2="270" y2="180" stroke="#1e293b" stroke-width="3"/>
+
+  <!-- Origin point -->
+  <circle cx="200" cy="60" r="6" fill="#1e293b"/>
+
+  <!-- Pendulum bob with glow -->
+  <circle cx="270" cy="180" r="24" fill="rgba(59, 130, 246, 0.3)"/>
+  <circle cx="270" cy="180" r="18" fill="url(#bobGradient)"/>
+
+  <!-- Motion trail -->
+  <circle cx="250" cy="150" r="8" fill="rgba(255,255,255,0.15)"/>
+  <circle cx="230" cy="130" r="6" fill="rgba(255,255,255,0.1)"/>
+
+  <!-- Title -->
+  <text x="200" y="250" font-family="system-ui, -apple-system, sans-serif" font-size="28" font-weight="700" fill="white" text-anchor="middle">Pendule Simple</text>
+  <text x="200" y="275" font-family="system-ui, -apple-system, sans-serif" font-size="14" fill="rgba(255,255,255,0.9)" text-anchor="middle">Simulation interactive de physique</text>
+</svg>

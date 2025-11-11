@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pendule Simple - Explorables</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            color: #333;
+        }
+
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .back-btn {
+            text-decoration: none;
+            color: #2563eb;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: transform 0.2s;
+        }
+
+        .back-btn:hover {
+            transform: translateX(-4px);
+        }
+
+        h1 {
+            font-size: 1.5rem;
+            color: #111827;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+            flex: 1;
+        }
+
+        .simulation-box {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+
+        canvas {
+            display: block;
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            background: #f8fafc;
+            border-radius: 8px;
+            border: 2px solid #e2e8f0;
+        }
+
+        .controls {
+            margin-top: 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .control-group {
+            background: #f8fafc;
+            padding: 1rem;
+            border-radius: 8px;
+        }
+
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #475569;
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        input[type="range"] {
+            width: 100%;
+            margin: 0.5rem 0;
+        }
+
+        .value-display {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #2563eb;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        button {
+            flex: 1;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: #2563eb;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #1d4ed8;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(37, 99, 235, 0.3);
+        }
+
+        .btn-secondary {
+            background: #64748b;
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: #475569;
+        }
+
+        .info-box {
+            background: #f0f9ff;
+            border-left: 4px solid #2563eb;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+        }
+
+        .info-box h2 {
+            color: #1e40af;
+            margin-bottom: 0.75rem;
+        }
+
+        .info-box p {
+            color: #1e40af;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .controls {
+                grid-template-columns: 1fr;
+            }
+
+            .button-group {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <a href="../" class="back-btn">← Retour aux explorables</a>
+            <h1>🔵 Pendule Simple</h1>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="simulation-box">
+            <canvas id="pendulumCanvas" width="600" height="600"></canvas>
+
+            <div class="controls">
+                <div class="control-group">
+                    <label for="lengthSlider">Longueur (m)</label>
+                    <input type="range" id="lengthSlider" min="50" max="250" value="150" step="10">
+                    <div class="value-display" id="lengthValue">1.5 m</div>
+                </div>
+
+                <div class="control-group">
+                    <label for="angleSlider">Angle initial (°)</label>
+                    <input type="range" id="angleSlider" min="5" max="175" value="45" step="5">
+                    <div class="value-display" id="angleValue">45°</div>
+                </div>
+
+                <div class="control-group">
+                    <label for="gravitySlider">Gravité (m/s²)</label>
+                    <input type="range" id="gravitySlider" min="1" max="20" value="9.8" step="0.1">
+                    <div class="value-display" id="gravityValue">9.8 m/s²</div>
+                </div>
+            </div>
+
+            <div class="button-group">
+                <button id="startBtn" class="btn-primary">▶ Démarrer</button>
+                <button id="resetBtn" class="btn-secondary">↻ Réinitialiser</button>
+            </div>
+        </div>
+
+        <div class="info-box">
+            <h2>À propos de cette simulation</h2>
+            <p>
+                Cette simulation interactive démontre le mouvement d'un pendule simple.
+                Ajustez la longueur, l'angle initial, et même la gravité pour voir comment
+                ces paramètres affectent le mouvement oscillatoire. Le pendule simple est
+                un exemple classique de mouvement harmonique en physique.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Pendulum Simulation
+        class Pendulum {
+            constructor(canvas) {
+                this.canvas = canvas;
+                this.ctx = canvas.getContext('2d');
+                this.width = canvas.width;
+                this.height = canvas.height;
+                this.origin = { x: this.width / 2, y: 50 };
+
+                // Physics parameters
+                this.length = 150; // pixels (scaled)
+                this.angle = Math.PI / 4; // radians
+                this.angleVelocity = 0;
+                this.angleAcceleration = 0;
+                this.gravity = 9.8;
+                this.damping = 0.995;
+
+                this.isRunning = false;
+                this.animationFrame = null;
+            }
+
+            setLength(pixels) {
+                this.length = pixels;
+            }
+
+            setAngle(degrees) {
+                this.angle = (degrees * Math.PI) / 180;
+                this.angleVelocity = 0;
+            }
+
+            setGravity(g) {
+                this.gravity = g;
+            }
+
+            start() {
+                this.isRunning = true;
+                this.animate();
+            }
+
+            stop() {
+                this.isRunning = false;
+                if (this.animationFrame) {
+                    cancelAnimationFrame(this.animationFrame);
+                }
+            }
+
+            reset() {
+                this.stop();
+                this.angleVelocity = 0;
+                this.angleAcceleration = 0;
+                this.draw();
+            }
+
+            update() {
+                // Pendulum physics: θ'' = -(g/L) * sin(θ)
+                this.angleAcceleration = (-this.gravity / (this.length / 100)) * Math.sin(this.angle);
+                this.angleVelocity += this.angleAcceleration;
+                this.angleVelocity *= this.damping; // Apply damping
+                this.angle += this.angleVelocity * 0.01;
+            }
+
+            draw() {
+                // Clear canvas
+                this.ctx.clearRect(0, 0, this.width, this.height);
+
+                // Calculate bob position
+                const bobX = this.origin.x + this.length * Math.sin(this.angle);
+                const bobY = this.origin.y + this.length * Math.cos(this.angle);
+
+                // Draw rod
+                this.ctx.beginPath();
+                this.ctx.strokeStyle = '#475569';
+                this.ctx.lineWidth = 3;
+                this.ctx.moveTo(this.origin.x, this.origin.y);
+                this.ctx.lineTo(bobX, bobY);
+                this.ctx.stroke();
+
+                // Draw origin point
+                this.ctx.beginPath();
+                this.ctx.fillStyle = '#1e293b';
+                this.ctx.arc(this.origin.x, this.origin.y, 8, 0, Math.PI * 2);
+                this.ctx.fill();
+
+                // Draw bob
+                this.ctx.beginPath();
+                this.ctx.fillStyle = '#2563eb';
+                this.ctx.arc(bobX, bobY, 20, 0, Math.PI * 2);
+                this.ctx.fill();
+
+                // Draw shadow/glow
+                this.ctx.beginPath();
+                this.ctx.fillStyle = 'rgba(37, 99, 235, 0.2)';
+                this.ctx.arc(bobX, bobY, 25, 0, Math.PI * 2);
+                this.ctx.fill();
+            }
+
+            animate() {
+                if (this.isRunning) {
+                    this.update();
+                    this.draw();
+                    this.animationFrame = requestAnimationFrame(() => this.animate());
+                }
+            }
+        }
+
+        // Initialize simulation
+        const canvas = document.getElementById('pendulumCanvas');
+        const pendulum = new Pendulum(canvas);
+        pendulum.draw();
+
+        // Controls
+        const lengthSlider = document.getElementById('lengthSlider');
+        const angleSlider = document.getElementById('angleSlider');
+        const gravitySlider = document.getElementById('gravitySlider');
+        const startBtn = document.getElementById('startBtn');
+        const resetBtn = document.getElementById('resetBtn');
+
+        lengthSlider.addEventListener('input', (e) => {
+            const length = parseInt(e.target.value);
+            pendulum.setLength(length);
+            document.getElementById('lengthValue').textContent = `${(length / 100).toFixed(1)} m`;
+            if (!pendulum.isRunning) pendulum.draw();
+        });
+
+        angleSlider.addEventListener('input', (e) => {
+            const angle = parseInt(e.target.value);
+            pendulum.setAngle(angle);
+            document.getElementById('angleValue').textContent = `${angle}°`;
+            if (!pendulum.isRunning) pendulum.draw();
+        });
+
+        gravitySlider.addEventListener('input', (e) => {
+            const gravity = parseFloat(e.target.value);
+            pendulum.setGravity(gravity);
+            document.getElementById('gravityValue').textContent = `${gravity.toFixed(1)} m/s²`;
+        });
+
+        startBtn.addEventListener('click', () => {
+            if (pendulum.isRunning) {
+                pendulum.stop();
+                startBtn.textContent = '▶ Démarrer';
+                startBtn.classList.remove('btn-secondary');
+                startBtn.classList.add('btn-primary');
+            } else {
+                pendulum.start();
+                startBtn.textContent = '⏸ Pause';
+                startBtn.classList.remove('btn-primary');
+                startBtn.classList.add('btn-secondary');
+            }
+        });
+
+        resetBtn.addEventListener('click', () => {
+            pendulum.reset();
+            startBtn.textContent = '▶ Démarrer';
+            startBtn.classList.remove('btn-secondary');
+            startBtn.classList.add('btn-primary');
+        });
+    </script>
+</body>
+</html>

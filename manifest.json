@@ -1,0 +1,12 @@
+{
+  "simulations": [
+    {
+      "id": "pendulum",
+      "title": "Pendule Simple",
+      "description": "Explorez les oscillations d'un pendule simple et découvrez comment la longueur et l'angle initial affectent le mouvement périodique.",
+      "thumbnail": "thumbnail.jpg",
+      "tags": ["physics", "mechanics"],
+      "date": "2025-01-15"
+    }
+  ]
+}
