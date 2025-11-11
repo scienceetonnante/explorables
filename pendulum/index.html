@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pendule Simple - Explorables</title>
+    <title>Simple Pendulum - Explorables</title>
     <style>
         * {
             margin: 0;
@@ -182,8 +182,8 @@
 <body>
     <header class="header">
         <div class="header-content">
-            <a href="../" class="back-btn">← Retour aux explorables</a>
-            <h1>🔵 Pendule Simple</h1>
+            <a href="../" class="back-btn">← Back to explorables</a>
+            <h1>🔵 Simple Pendulum</h1>
         </div>
     </header>
 
@@ -193,37 +193,37 @@
 
             <div class="controls">
                 <div class="control-group">
-                    <label for="lengthSlider">Longueur (m)</label>
+                    <label for="lengthSlider">Length (m)</label>
                     <input type="range" id="lengthSlider" min="50" max="250" value="150" step="10">
                     <div class="value-display" id="lengthValue">1.5 m</div>
                 </div>
 
                 <div class="control-group">
-                    <label for="angleSlider">Angle initial (°)</label>
+                    <label for="angleSlider">Initial angle (°)</label>
                     <input type="range" id="angleSlider" min="5" max="175" value="45" step="5">
                     <div class="value-display" id="angleValue">45°</div>
                 </div>
 
                 <div class="control-group">
-                    <label for="gravitySlider">Gravité (m/s²)</label>
+                    <label for="gravitySlider">Gravity (m/s²)</label>
                     <input type="range" id="gravitySlider" min="1" max="20" value="9.8" step="0.1">
                     <div class="value-display" id="gravityValue">9.8 m/s²</div>
                 </div>
             </div>
 
             <div class="button-group">
-                <button id="startBtn" class="btn-primary">▶ Démarrer</button>
-                <button id="resetBtn" class="btn-secondary">↻ Réinitialiser</button>
+                <button id="startBtn" class="btn-primary">▶ Start</button>
+                <button id="resetBtn" class="btn-secondary">↻ Reset</button>
             </div>
         </div>
 
         <div class="info-box">
-            <h2>À propos de cette simulation</h2>
+            <h2>About this simulation</h2>
             <p>
-                Cette simulation interactive démontre le mouvement d'un pendule simple.
-                Ajustez la longueur, l'angle initial, et même la gravité pour voir comment
-                ces paramètres affectent le mouvement oscillatoire. Le pendule simple est
-                un exemple classique de mouvement harmonique en physique.
+                This interactive simulation demonstrates the motion of a simple pendulum.
+                Adjust the length, initial angle, and even gravity to see how
+                these parameters affect the oscillatory motion. The simple pendulum is
+                a classic example of harmonic motion in physics.
             </p>
         </div>
     </div>
@@ -369,7 +369,7 @@
         startBtn.addEventListener('click', () => {
             if (pendulum.isRunning) {
                 pendulum.stop();
-                startBtn.textContent = '▶ Démarrer';
+                startBtn.textContent = '▶ Start';
                 startBtn.classList.remove('btn-secondary');
                 startBtn.classList.add('btn-primary');
             } else {
@@ -382,7 +382,7 @@
 
         resetBtn.addEventListener('click', () => {
             pendulum.reset();
-            startBtn.textContent = '▶ Démarrer';
+            startBtn.textContent = '▶ Start';
             startBtn.classList.remove('btn-secondary');
             startBtn.classList.add('btn-primary');
         });
