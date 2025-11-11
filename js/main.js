@@ -56,7 +56,7 @@ class ExplorablesGallery {
 
         } catch (error) {
             console.error('Error loading simulations:', error);
-            this.showError('Impossible de charger les simulations. Vérifiez le fichier manifest.json.');
+            this.showError('Unable to load simulations. Please check the manifest.json file.');
         }
     }
 
@@ -110,7 +110,7 @@ class ExplorablesGallery {
                         src="${thumbnailPath}"
                         alt="${sim.title}"
                         class="sim-thumbnail"
-                        onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 300%22%3E%3Crect fill=%22%23f3f4f6%22 width=%22400%22 height=%22300%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%239ca3af%22 font-family=%22system-ui%22 font-size=%2220%22%3EImage non disponible%3C/text%3E%3C/svg%3E'"
+                        onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 300%22%3E%3Crect fill=%22%23f3f4f6%22 width=%22400%22 height=%22300%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%239ca3af%22 font-family=%22system-ui%22 font-size=%2220%22%3EImage unavailable%3C/text%3E%3C/svg%3E'"
                     >
                 </div>
                 <div class="sim-content">
@@ -119,7 +119,7 @@ class ExplorablesGallery {
                     ${tagsHtml ? `<div class="sim-tags">${tagsHtml}</div>` : ''}
                     <div class="sim-footer">
                         <span class="sim-date">${formattedDate}</span>
-                        <span class="sim-cta">Explorer</span>
+                        <span class="sim-cta">Explore</span>
                     </div>
                 </div>
             </a>
@@ -128,14 +128,14 @@ class ExplorablesGallery {
 
     translateTag(tag) {
         const translations = {
-            'physics': 'Physique',
-            'biology': 'Biologie',
-            'mathematics': 'Mathématiques',
-            'chemistry': 'Chimie',
-            'astronomy': 'Astronomie',
-            'mechanics': 'Mécanique',
-            'optics': 'Optique',
-            'thermodynamics': 'Thermodynamique'
+            'physics': 'Physics',
+            'biology': 'Biology',
+            'mathematics': 'Mathematics',
+            'chemistry': 'Chemistry',
+            'astronomy': 'Astronomy',
+            'mechanics': 'Mechanics',
+            'optics': 'Optics',
+            'thermodynamics': 'Thermodynamics'
         };
         return translations[tag] || tag;
     }
@@ -145,7 +145,7 @@ class ExplorablesGallery {
 
         try {
             const date = new Date(dateString);
-            return new Intl.DateTimeFormat('fr-FR', {
+            return new Intl.DateTimeFormat('en-US', {
                 year: 'numeric',
                 month: 'long'
             }).format(date);

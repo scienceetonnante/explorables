@@ -1,54 +1,54 @@
-# Explorables - Simulations Scientifiques Interactives
+# Explorables - Interactive Scientific Simulations
 
-Une collection de simulations scientifiques interactives pour explorer la physique, la biologie et d'autres domaines scientifiques.
+A collection of interactive scientific simulations to explore physics, biology, and other scientific fields.
 
-## 🚀 Déploiement
+## 🚀 Deployment
 
-Ce site est automatiquement déployé sur GitHub Pages à chaque push sur la branche `main`.
+This site is automatically deployed to GitHub Pages with every push to the `main` branch.
 
-URL de production : `https://[votre-username].github.io/explorables/`
+Production URL: `https://[your-username].github.io/explorables/`
 
-## 📁 Structure du Projet
+## 📁 Project Structure
 
 ```
 explorables/
-├── index.html              # Page d'accueil principale
-├── manifest.json           # Liste des simulations disponibles
+├── index.html              # Main homepage
+├── manifest.json           # List of available simulations
 ├── css/
-│   └── styles.css          # Styles de la page d'accueil
+│   └── styles.css          # Homepage styles
 ├── js/
-│   └── main.js             # Logique d'auto-découverte
-├── pendulum/               # Exemple de simulation
-│   ├── index.html          # Page de simulation
-│   └── thumbnail.jpg       # Miniature (400x300px)
-└── ... (autres simulations)
+│   └── main.js             # Auto-discovery logic
+├── pendulum/               # Example simulation
+│   ├── index.html          # Simulation page
+│   └── thumbnail.jpg       # Thumbnail (400x300px)
+└── ... (other simulations)
 ```
 
-## ➕ Ajouter une Nouvelle Simulation
+## ➕ Adding a New Simulation
 
-### 1. Créer un nouveau dossier
+### 1. Create a new folder
 
 ```bash
-mkdir ma-simulation
-cd ma-simulation
+mkdir my-simulation
+cd my-simulation
 ```
 
-### 2. Créer les fichiers requis
+### 2. Create required files
 
-- `index.html` - Votre simulation interactive
-- `thumbnail.jpg` ou `thumbnail.png` - Image de prévisualisation (recommandé : 400x300px)
+- `index.html` - Your interactive simulation
+- `thumbnail.jpg` or `thumbnail.png` - Preview image (recommended: 400x300px)
 
-### 3. Ajouter à manifest.json
+### 3. Add to manifest.json
 
-Ajoutez votre simulation dans le fichier `manifest.json` :
+Add your simulation to the `manifest.json` file:
 
 ```json
 {
   "simulations": [
     {
-      "id": "ma-simulation",
-      "title": "Titre de Ma Simulation",
-      "description": "Une brève description de ce que fait votre simulation",
+      "id": "my-simulation",
+      "title": "My Simulation Title",
+      "description": "A brief description of what your simulation does",
       "thumbnail": "thumbnail.jpg",
       "tags": ["physics", "biology", "mathematics", "chemistry"],
       "date": "2025-01-15"
@@ -57,81 +57,81 @@ Ajoutez votre simulation dans le fichier `manifest.json` :
 }
 ```
 
-### 4. Commit et Push
+### 4. Commit and Push
 
 ```bash
 git add .
-git commit -m "feat: add new simulation - [nom]"
+git commit -m "feat: add new simulation - [name]"
 git push origin main
 ```
 
-Votre simulation sera automatiquement déployée sur GitHub Pages en quelques secondes !
+Your simulation will be automatically deployed to GitHub Pages in seconds!
 
-## 🏷️ Tags Disponibles
+## 🏷️ Available Tags
 
-- `physics` - Physique
-- `biology` - Biologie
-- `mathematics` - Mathématiques
-- `chemistry` - Chimie
-- `astronomy` - Astronomie
-- `mechanics` - Mécanique
-- `optics` - Optique
-- `thermodynamics` - Thermodynamique
+- `physics` - Physics
+- `biology` - Biology
+- `mathematics` - Mathematics
+- `chemistry` - Chemistry
+- `astronomy` - Astronomy
+- `mechanics` - Mechanics
+- `optics` - Optics
+- `thermodynamics` - Thermodynamics
 
-## 🔧 Configuration GitHub Pages
+## 🔧 GitHub Pages Configuration
 
-### Première Configuration
+### Initial Setup
 
-1. Allez dans **Settings** > **Pages** de votre dépôt GitHub
-2. Sous **Source**, sélectionnez **GitHub Actions**
-3. Le déploiement se fera automatiquement après chaque push sur `main`
+1. Go to **Settings** > **Pages** in your GitHub repository
+2. Under **Source**, select **GitHub Actions**
+3. Deployment will happen automatically after each push to `main`
 
-### Configuration du Sous-domaine
+### Subdomain Configuration
 
-Pour utiliser `explorables.scienceetonnante.com` :
+To use `explorables.scienceetonnante.com`:
 
-1. Dans **Settings** > **Pages**, sous **Custom domain**, entrez : `explorables.scienceetonnante.com`
-2. Chez votre hébergeur DNS (OVH), ajoutez un enregistrement CNAME :
+1. In **Settings** > **Pages**, under **Custom domain**, enter: `explorables.scienceetonnante.com`
+2. At your DNS host (OVH), add a CNAME record:
    ```
    Type: CNAME
-   Nom: explorables
-   Valeur: [votre-username].github.io
+   Name: explorables
+   Value: [your-username].github.io
    ```
-3. Attendez la propagation DNS (quelques minutes à quelques heures)
-4. GitHub générera automatiquement un certificat SSL
+3. Wait for DNS propagation (a few minutes to a few hours)
+4. GitHub will automatically generate an SSL certificate
 
-## 🛠️ Développement Local
+## 🛠️ Local Development
 
-Pour tester localement :
+To test locally:
 
 ```bash
-# Option 1 : Python
+# Option 1: Python
 python -m http.server 8000
 
-# Option 2 : Node.js
+# Option 2: Node.js
 npx serve
 
-# Option 3 : PHP
+# Option 3: PHP
 php -S localhost:8000
 ```
 
-Puis ouvrez : `http://localhost:8000`
+Then open: `http://localhost:8000`
 
-## 📝 Exemples de Simulations
+## 📝 Simulation Examples
 
-### Simulation Simple (HTML + Canvas)
+### Simple Simulation (HTML + Canvas)
 
-Voir `pendulum/index.html` pour un exemple complet utilisant Canvas API.
+See `pendulum/index.html` for a complete example using the Canvas API.
 
-### Avec Bibliothèques Externes
+### With External Libraries
 
-Vous pouvez utiliser des bibliothèques comme :
-- **p5.js** - Pour le dessin et l'interactivité
-- **Three.js** - Pour les simulations 3D
-- **Chart.js** - Pour les graphiques
-- **D3.js** - Pour les visualisations de données
+You can use libraries such as:
+- **p5.js** - For drawing and interactivity
+- **Three.js** - For 3D simulations
+- **Chart.js** - For charts
+- **D3.js** - For data visualizations
 
-Exemple avec p5.js :
+Example with p5.js:
 
 ```html
 <!DOCTYPE html>
@@ -147,25 +147,25 @@ Exemple avec p5.js :
 
         function draw() {
             background(220);
-            // Votre simulation ici
+            // Your simulation here
         }
     </script>
 </body>
 </html>
 ```
 
-## 🤝 Contribution
+## 🤝 Contributing
 
-1. Fork le projet
-2. Créez une branche (`git checkout -b feature/ma-simulation`)
-3. Commit vos changements (`git commit -m 'feat: add simulation'`)
-4. Push vers la branche (`git push origin feature/ma-simulation`)
-5. Ouvrez une Pull Request
+1. Fork the project
+2. Create a branch (`git checkout -b feature/my-simulation`)
+3. Commit your changes (`git commit -m 'feat: add simulation'`)
+4. Push to the branch (`git push origin feature/my-simulation`)
+5. Open a Pull Request
 
-## 📄 Licence
+## 📄 License
 
-Ce projet fait partie de [Science Étonnante](https://www.scienceetonnante.com)
+This project is part of [Science Étonnante](https://www.scienceetonnante.com)
 
 ---
 
-**Note** : Ce projet utilise GitHub Pages pour l'hébergement. Toute modification sur la branche `main` déclenchera un déploiement automatique.
+**Note**: This project uses GitHub Pages for hosting. Any changes to the `main` branch will trigger an automatic deployment.
