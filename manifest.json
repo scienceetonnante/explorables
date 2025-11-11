@@ -4,9 +4,17 @@
       "id": "pendulum",
       "title": "Simple Pendulum",
       "description": "Explore the oscillations of a simple pendulum and discover how length and initial angle affect periodic motion.",
-      "thumbnail": "thumbnail.jpg",
+      "thumbnail": "thumbnail.png",
       "tags": ["physics", "mechanics"],
       "date": "2025-01-15"
+    },
+	{
+      "id": "gravity-assist",
+      "title": "Gravity assist",
+      "description": "Gravity assist and slingshot.",
+      "thumbnail": "thumbnail.png",
+      "tags": ["physics", "mechanics"],
+      "date": "2025-11-11"
     }
   ]
 }

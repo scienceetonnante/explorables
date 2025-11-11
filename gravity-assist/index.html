@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gravity Assist Sandbox</title>
+  <script type="module" crossorigin src="/assets/index-D_dPBWAz.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-CrjHUkLV.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Gravity Assist Sandbox</h1>
+        </header>
+
+        <div class="main-layout">
+            <!-- Controls Section -->
+            <section class="controls-section">
+                <div class="controls-grid">
+                    <!-- Column 1: Main Parameters -->
+                    <div class="controls-column">
+                        <!-- Planet Speed -->
+                        <div class="control-group">
+                            <div class="control-header">
+                                <label for="v0">v₀ (planet speed) [km/s]:</label>
+                                <input type="number" id="v0" step="0.1" value="20">
+                            </div>
+                            <input type="range" id="v0-slider" min="0" max="40" step="0.1" value="20">
+                        </div>
+
+                        <!-- Probe Speed -->
+                        <div class="control-group">
+                            <div class="control-header">
+                                <label for="v">v (probe speed) [km/s]:</label>
+                                <input type="number" id="v" step="0.1" value="10">
+                            </div>
+                            <input type="range" id="v-slider" min="0" max="50" step="0.1" value="10">
+                        </div>
+
+                        <!-- Approach Angle -->
+                        <div class="control-group">
+                            <div class="control-header">
+                                <label for="theta">θ (approach angle) [deg]:</label>
+                                <input type="number" id="theta" step="1" value="90">
+                            </div>
+                            <input type="range" id="theta-slider" min="-180" max="180" step="1" value="90">
+                        </div>
+
+                        <!-- Impact Parameter -->
+                        <div class="control-group">
+                            <div class="control-header">
+                                <label for="b">b (impact parameter) [km]:</label>
+                                <input type="number" id="b" step="100" value="100000">
+                            </div>
+                            <input type="range" id="b-slider" min="-300000" max="300000" step="100" value="100000">
+                        </div>
+                    </div>
+
+                    <!-- Column 2: View & Animation -->
+                    <div class="controls-column">
+                        <!-- Zoom Control -->
+                        <div class="control-group">
+                            <div class="control-header">
+                                <label for="zoom">Zoom:</label>
+                                <input type="number" id="zoom" step="0.1" value="1" min="0.1" max="10">
+                            </div>
+                            <input type="range" id="zoom-slider" min="0.1" max="10" step="0.1" value="1">
+                        </div>
+
+                        <div class="control-group">
+                            <div class="control-header">
+                                <label for="speed">Animation Speed:</label>
+                                <input type="number" id="speed" step="0.1" value="1" min="0.1" max="5">
+                            </div>
+                            <input type="range" id="speed-slider" min="0.1" max="5" step="0.1" value="1">
+                        </div>
+
+                        <!-- Animation Controls -->
+                        <div class="control-group">
+                            <div class="control-header">
+                                <label>
+                                    <input type="checkbox" id="animate">
+                                    Enable Animation
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Visualization Panels -->
+            <div class="viz-container">
+                <canvas id="canvas-planet" width="800" height="600"></canvas>
+                <canvas id="canvas-sun" width="800" height="600"></canvas>
+            </div>
+
+            <!-- Results Section -->
+            <section class="results-section">
+                <div class="readouts">
+                    <table>
+                        <tr>
+                            <td>U (relative speed):</td>
+                            <td id="U-value">-</td>
+                            <td>|v<sub>in</sub>|:</td>
+                            <td id="vin-value">-</td>
+                        </tr>
+                        <tr>
+                            <td>δ (scattering angle):</td>
+                            <td id="delta-value">-</td>
+                            <td>|v<sub>out</sub>|:</td>
+                            <td id="vout-value">-</td>
+                        </tr>
+                        <tr>
+                            <td>r<sub>p</sub> (periapsis):</td>
+                            <td id="rp-value">-</td>
+                            <td>ΔE (energy change):</td>
+                            <td id="dE-value">-</td>
+                        </tr>
+                    </table>
+                </div>
+            </section>
+        </div>
+    </div>
+
+</body>
+</html>
