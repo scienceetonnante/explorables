@@ -31,6 +31,14 @@
       "thumbnail": "thumbnail.png",
       "tags": ["physics", "mechanics", "astronomy"],
       "date": "2025-11-12"
+    },
+	{
+      "id": "free-fall-towers",
+      "title": "Free fall from towers",
+      "description": "Try to shoot a free falling ball from a tower",
+      "thumbnail": "thumbnail.png",
+      "tags": ["physics", "mechanics"],
+      "date": "2025-11-12"
     }
   ]
 }
