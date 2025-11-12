@@ -1,9 +1,17 @@
 {
   "simulations": [
-    {
-      "id": "pendulum",
-      "title": "Simple Pendulum",
-      "description": "Explore the oscillations of a simple pendulum and discover how length and initial angle affect periodic motion.",
+  	{
+      "id": "free-fall-towers",
+      "title": "Free fall from towers",
+      "description": "Try to shoot a free falling ball from a tower",
+      "thumbnail": "thumbnail.png",
+      "tags": ["physics", "mechanics"],
+      "date": "2025-11-12"
+    },
+	{
+      "id": "newton-cannon",
+      "title": "Newton Cannon",
+      "description": "Newton Cannon",
       "thumbnail": "thumbnail.png",
       "tags": ["physics", "mechanics"],
       "date": "2025-11-11"
@@ -17,27 +25,11 @@
       "date": "2025-11-11"
     },
 	{
-      "id": "newton-cannon",
-      "title": "Newton Cannon",
-      "description": "Newton Cannon",
-      "thumbnail": "thumbnail.png",
-      "tags": ["physics", "mechanics"],
-      "date": "2025-11-11"
-    },
-	{
       "id": "lagrange-points",
       "title": "Lagrange points",
       "description": "Lagrange points",
       "thumbnail": "thumbnail.png",
       "tags": ["physics", "mechanics", "astronomy"],
-      "date": "2025-11-12"
-    },
-	{
-      "id": "free-fall-towers",
-      "title": "Free fall from towers",
-      "description": "Try to shoot a free falling ball from a tower",
-      "thumbnail": "thumbnail.png",
-      "tags": ["physics", "mechanics"],
       "date": "2025-11-12"
     }
   ]
