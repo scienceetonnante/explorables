@@ -45,7 +45,9 @@ class ExplorablesGallery {
 
     async loadSimulations() {
         try {
-            const response = await fetch(this.manifestPath);
+            // Add timestamp to bust browser cache and ensure fresh manifest data
+            const cacheBuster = `?v=${Date.now()}`;
+            const response = await fetch(this.manifestPath + cacheBuster);
 
             if (!response.ok) {
                 throw new Error(`Failed to load manifest: ${response.statusText}`);
