@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lagrange Points and Trojans</title>
+  <script type="module" crossorigin src="./assets/index-CMnIM5Tv.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-CaxQVrxk.css">
+</head>
+<body>
+  <header class="header container">
+    <h1 class="header__title">Lagrange points and Trojans formation</h1>
+  </header>
+
+  <main class="container grid-2">
+    <section class="panel">
+      <form class="form">
+        <div class="control-group">
+          <h3 class="control-group__label">Simulation</h3>
+          <div class="control">
+            <div class="control__row">
+              <label class="control__label" for="particleCount">Particles</label>
+              <span class="control__value" id="particleCountValue">20000</span>
+            </div>
+            <input id="particleCount" type="range" min="0" max="50000" step="1000" value="20000" />
+          </div>
+          <div class="control">
+            <div class="control__row">
+              <label class="control__label" for="speed">Speed</label>
+              <span class="control__value" id="speedValue">1.0×</span>
+            </div>
+            <input id="speed" type="range" min="0" max="5" step="0.1" value="1.0" />
+          </div>
+        </div>
+
+        <div class="control-group">
+          <h3 class="control-group__label">Display</h3>
+          <div class="control">
+            <label class="control__label">
+              <input id="showPotential" type="checkbox" />
+              Show effective potential
+            </label>
+          </div>
+          <div class="row gap-2 mt-2">
+            <button id="toggleFrame" class="btn btn--secondary" type="button">Switch to Inertial Frame</button>
+          </div>
+        </div>
+
+        <div class="row mt-2">
+          <button id="playPause" class="btn btn--primary" type="button">Pause</button>
+          <button id="reset" class="btn btn--secondary" type="button">Reset</button>
+        </div>
+      </form>
+
+      <table class="readouts mt-2">
+        <tr>
+          <td>Time</td>
+          <td id="timeValue">0.00</td>
+        </tr>
+        <tr>
+          <td>Particles</td>
+          <td id="particlesValue">0</td>
+        </tr>
+        <tr>
+          <td>Frame Time</td>
+          <td id="frameTimeValue">0.0 ms</td>
+        </tr>
+      </table>
+    </section>
+
+    <section class="panel">
+      <canvas id="canvas" width="600" height="600" style="background: black;"></canvas>
+
+    </section>
+  </main>
+
+</body>
+</html>

@@ -13,16 +13,24 @@
       "title": "Gravity assist",
       "description": "Gravity assist and slingshot.",
       "thumbnail": "thumbnail.png",
-      "tags": ["physics", "mechanics"],
+      "tags": ["physics", "mechanics", "astronomy"],
       "date": "2025-11-11"
     },
-		{
+	{
       "id": "newton-cannon",
       "title": "Newton Cannon",
       "description": "Newton Cannon",
       "thumbnail": "thumbnail.png",
       "tags": ["physics", "mechanics"],
       "date": "2025-11-11"
-    }
+    },
+	{
+      "id": "lagrange-points",
+      "title": "Lagrange points",
+      "description": "Lagrange points",
+      "thumbnail": "thumbnail.png",
+      "tags": ["physics", "mechanics", "astronomy"],
+      "date": "2025-11-12"
+    },
   ]
 }
