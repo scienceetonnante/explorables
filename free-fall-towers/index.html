@@ -4,8 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Free Fall Towers - Interactive Simulation</title>
-  <script type="module" crossorigin src="./free-fall-towers.js"></script>
-  <link rel="stylesheet" crossorigin href="./free-fall-towers.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <script type="module" crossorigin src="./assets/index-C4k-uS4_.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-Coia72ma.css">
 </head>
 <body>
   <header class="header container">
@@ -22,14 +25,14 @@
               <label class="control__label" for="leftVelocity">Velocity</label>
               <span class="control__value" id="leftVelocityValue">20.0 m/s</span>
             </div>
-            <input id="leftVelocity" type="range" min="0" max="50" step="0.5" value="20">
+            <input id="leftVelocity" type="range" min="0" max="50" step="0.5" value="20" data-initial="20">
           </div>
           <div class="control">
             <div class="control__row">
               <label class="control__label" for="leftAngle">Angle</label>
               <span class="control__value" id="leftAngleValue">25°</span>
             </div>
-            <input id="leftAngle" type="range" min="-90" max="90" step="1" value="25">
+            <input id="leftAngle" type="range" min="-90" max="90" step="1" value="25" data-initial="25">
           </div>
         </div>
 
@@ -40,29 +43,33 @@
               <label class="control__label" for="animationSpeed">Speed</label>
               <span class="control__value" id="animationSpeedValue">1.0x</span>
             </div>
-            <input id="animationSpeed" type="range" min="0" max="1" step="0.05" value="1">
+            <input id="animationSpeed" type="range" min="0.1" max="2" step="0.1" value="1" data-initial="1">
           </div>
           <div class="control">
             <div class="control__row">
               <label class="control__label" for="showGuides">
-                <input type="checkbox" id="showGuides" unchecked> Show Position Guides
+                <input type="checkbox" id="showGuides"> Show Position Guides
               </label>
             </div>
           </div>
         </div>
 
         <div class="row mt-2">
-          <button class="btn btn--primary" type="button" id="launchBtn">Launch</button>
+          <button class="btn btn--primary" type="button" id="playBtn">Play</button>
           <button class="btn btn--secondary" type="button" id="resetBtn">Reset</button>
+          <button class="btn btn--secondary" type="button" id="initialBtn">Initial</button>
         </div>
       </form>
     </section>
 
-    <section class="viz panel">
-      <canvas id="viewport" width="800" height="600"></canvas>
-      <div id="statusMessage" class="status" style="margin-top: 12px; display: none;"></div>
+    <section class="viewport-panel">
+      <canvas id="viewport"></canvas>
     </section>
   </main>
+
+  <div class="container">
+    <div id="statusMessage" class="status" style="margin-top: 12px; display: none;"></div>
+  </div>
 
 </body>
 </html>
