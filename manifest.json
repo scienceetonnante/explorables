@@ -1,5 +1,13 @@
 {
   "simulations": [
+    {
+      "id": "pisa-tower",
+      "title": "Galileo's Pisa Tower Experiment",
+      "description": "Galileo's Pisa Tower Experiment",
+      "thumbnail": "thumbnail.png",
+      "tags": ["physics", "mechanics"],
+      "date": "2025-11-12"
+    },
   	{
       "id": "free-fall-towers",
       "title": "Free fall from towers",
