@@ -4,8 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pisa Tower Free Fall Simulation</title>
-  <script type="module" crossorigin src="./assets/index-CiaBD8Yb.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-DRybYjZ-.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <script type="module" crossorigin src="./assets/index-BoeR5kiJ.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-BW45tr_X.css">
 </head>
 <body>
   <header class="header container">
@@ -24,14 +27,14 @@
               <label class="control__label" for="blueMass">Mass</label>
               <span class="control__value" id="blueMassValue">33.0 kg</span>
             </div>
-            <input id="blueMass" type="range" min="0.1" max="200" step="0.1" value="33.0">
+            <input id="blueMass" type="range" min="0.1" max="200" step="0.1" value="33.0" data-initial="33.0">
           </div>
           <div class="control">
             <div class="control__row">
               <label class="control__label" for="blueDensity">Density</label>
               <span class="control__value" id="blueDensityValue">7850 kg/m³</span>
             </div>
-            <input id="blueDensity" type="range" min="500" max="11000" step="50" value="7850">
+            <input id="blueDensity" type="range" min="500" max="11000" step="50" value="7850" data-initial="7850">
           </div>
           <div class="control">
             <div class="control__row">
@@ -49,14 +52,14 @@
               <label class="control__label" for="redMass">Mass</label>
               <span class="control__value" id="redMassValue">4 kg</span>
             </div>
-            <input id="redMass" type="range" min="0.1" max="200" step="0.1" value="4">
+            <input id="redMass" type="range" min="0.1" max="200" step="0.1" value="4" data-initial="4">
           </div>
           <div class="control">
             <div class="control__row">
               <label class="control__label" for="redDensity">Density</label>
               <span class="control__value" id="redDensityValue">1000 kg/m³</span>
             </div>
-            <input id="redDensity" type="range" min="500" max="11000" step="50" value="1000">
+            <input id="redDensity" type="range" min="500" max="11000" step="50" value="1000" data-initial="1000">
           </div>
           <div class="control">
             <div class="control__row">
@@ -74,21 +77,21 @@
               <label class="control__label" for="gravity">Gravity</label>
               <span class="control__value" id="gravityValue">9.81 m/s²</span>
             </div>
-            <input id="gravity" type="range" min="1" max="20" step="0.1" value="9.81">
+            <input id="gravity" type="range" min="1" max="20" step="0.1" value="9.81" data-initial="9.81">
           </div>
           <div class="control">
             <div class="control__row">
               <label class="control__label" for="airDensity">Air Density</label>
               <span class="control__value" id="airDensityValue">1.225 kg/m³</span>
             </div>
-            <input id="airDensity" type="range" min="0" max="5" step="0.05" value="1.225">
+            <input id="airDensity" type="range" min="0" max="5" step="0.05" value="1.225" data-initial="1.225">
           </div>
           <div class="control">
             <div class="control__row">
               <label class="control__label" for="timeScale">Time Scale</label>
               <span class="control__value" id="timeScaleValue">1.00×</span>
             </div>
-            <input id="timeScale" type="range" min="0.1" max="1" step="0.05" value="1">
+            <input id="timeScale" type="range" min="0.1" max="1" step="0.05" value="1" data-initial="1">
           </div>
         </div>
 
@@ -96,25 +99,20 @@
         <div class="row mt-3">
           <button class="btn btn--primary" type="button" id="playPauseBtn">Play</button>
           <button class="btn btn--secondary" type="button" id="resetBtn">Reset</button>
+          <button class="btn btn--secondary" type="button" id="initialBtn">Initial</button>
         </div>
       </form>
     </section>
 
     <!-- Viewport Panel -->
-    <section class="panel viz viewport-panel">
+    <section class="viewport-panel">
       <canvas id="viewport"></canvas>
     </section>
 
     <!-- Graphs Panel - stacked vertically on the right -->
     <section class="graphs-panel">
-      <div class="graph-wrapper panel viz">
-        <h3 class="graph-title">Position vs Time</h3>
-        <canvas id="positionGraph"></canvas>
-      </div>
-      <div class="graph-wrapper panel viz">
-        <h3 class="graph-title">Velocity vs Time</h3>
-        <canvas id="velocityGraph"></canvas>
-      </div>
+      <canvas id="positionGraph"></canvas>
+      <canvas id="velocityGraph"></canvas>
     </section>
   </main>
 
