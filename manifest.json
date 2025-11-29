@@ -8,6 +8,14 @@
       "tags": ["physics", "mechanics"],
       "date": "2025-11-12"
     },
+	    {
+      "id": "pisa-plane",
+      "title": "Galileo's Inclined Plane Experiment",
+      "description": "Galileo's Inclined Plane Experiment",
+      "thumbnail": "thumbnail.png",
+      "tags": ["physics", "mechanics"],
+      "date": "2025-11-12"
+    },
   	{
       "id": "free-fall-towers",
       "title": "Free fall from towers",

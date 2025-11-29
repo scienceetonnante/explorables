@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galileo's Inclined Plane Simulation</title>
+  <script type="module" crossorigin src="./assets/index-Dsulbu8T.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-D03UxB0F.css">
+</head>
+<body>
+  <header class="header container">
+    <h1 class="header__title">Galileo's Inclined Plane Experiment</h1>
+  </header>
+
+  <main class="container simulation-grid">
+    <!-- Viewport Panel - Full width at top -->
+    <section class="viewport-panel">
+      <canvas id="viewport"></canvas>
+    </section>
+
+    <!-- Controls Panel - Left column below viewport -->
+    <section class="controls-panel">
+      <form class="form">
+        <!-- Ball Density Controls -->
+        <div class="control-group">
+          <h3 class="control-group__label">Ball Properties</h3>
+          <div class="control">
+            <div class="control__row">
+              <label class="control__label" for="blueDensity">🔵 Blue Ball Density</label>
+              <span class="control__value" id="blueDensityValue">7850 kg/m³</span>
+            </div>
+            <input id="blueDensity" type="range" min="500" max="11000" step="50" value="7850" data-initial="7850">
+          </div>
+          <div class="control">
+            <div class="control__row">
+              <label class="control__label" for="redDensity">🔴 Red Ball Density</label>
+              <span class="control__value" id="redDensityValue">2700 kg/m³</span>
+            </div>
+            <input id="redDensity" type="range" min="500" max="11000" step="50" value="2700" data-initial="2700">
+          </div>
+        </div>
+
+        <!-- Rolling Resistance Control -->
+        <div class="control-group">
+          <h3 class="control-group__label">Rolling Resistance</h3>
+          <div class="control">
+            <div class="control__row">
+              <label class="control__label" for="frictionCoefficient">
+                Rolling Resistance Coeff.
+                <span class="tooltip-wrapper">
+                  <span class="tooltip-icon">ⓘ</span>
+                  <span class="tooltip-text">A dimensionless quantity representing the ratio of rolling resistance force over normal force. Ranges from ~0 for steel wheel on steel rail, to less than 0.1 for rubber on road.</span>
+                </span>
+              </label>
+              <span class="control__value" id="frictionCoefficientValue">0.00</span>
+            </div>
+            <input id="frictionCoefficient" type="range" min="0" max="0.15" step="0.01" value="0.0" data-initial="0.0">
+          </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="row mt-3">
+          <button class="btn btn--primary" type="button" id="playPauseBtn">Play</button>
+          <button class="btn btn--secondary" type="button" id="resetBtn">Reset</button>
+          <button class="btn btn--secondary" type="button" id="initialBtn">Initial</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- Position Graph - Middle column below viewport -->
+    <div class="graph-wrapper">
+      <canvas id="positionGraph"></canvas>
+    </div>
+
+    <!-- Velocity Graph - Right column below viewport -->
+    <div class="graph-wrapper">
+      <canvas id="velocityGraph"></canvas>
+    </div>
+  </main>
+
+</body>
+</html>
