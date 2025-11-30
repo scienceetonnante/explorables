@@ -7,8 +7,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-  <script type="module" crossorigin src="./assets/index-BoeR5kiJ.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-BW45tr_X.css">
+  <script type="module" crossorigin src="./assets/index-DT6Z_H-1.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-DxyOR8He.css">
 </head>
 <body>
   <header class="header container">
@@ -27,7 +27,7 @@
               <label class="control__label" for="blueMass">Mass</label>
               <span class="control__value" id="blueMassValue">33.0 kg</span>
             </div>
-            <input id="blueMass" type="range" min="0.1" max="200" step="0.1" value="33.0" data-initial="33.0">
+            <input id="blueMass" type="range" min="0.5" max="200" step="0.5" value="33.0" data-initial="33.0">
           </div>
           <div class="control">
             <div class="control__row">
@@ -52,7 +52,7 @@
               <label class="control__label" for="redMass">Mass</label>
               <span class="control__value" id="redMassValue">4 kg</span>
             </div>
-            <input id="redMass" type="range" min="0.1" max="200" step="0.1" value="4" data-initial="4">
+            <input id="redMass" type="range" min="0.5" max="200" step="0.5" value="4" data-initial="4">
           </div>
           <div class="control">
             <div class="control__row">
@@ -77,14 +77,17 @@
               <label class="control__label" for="gravity">Gravity</label>
               <span class="control__value" id="gravityValue">9.81 m/s²</span>
             </div>
-            <input id="gravity" type="range" min="1" max="20" step="0.1" value="9.81" data-initial="9.81">
+            <input id="gravity" type="range" min="1" max="20" step="0.01" value="9.81" data-initial="9.81">
           </div>
           <div class="control">
             <div class="control__row">
-              <label class="control__label" for="airDensity">Air Density</label>
-              <span class="control__value" id="airDensityValue">1.225 kg/m³</span>
+              <label class="control__label" for="airDensity">
+                Air Density
+                <span class="tooltip-icon" data-tooltip="Drag force is proportional to air density and velocity squared, assuming a spherical shape with drag coefficient Cd = 0.47">ⓘ</span>
+              </label>
+              <span class="control__value" id="airDensityValue">1.25 kg/m³</span>
             </div>
-            <input id="airDensity" type="range" min="0" max="5" step="0.05" value="1.225" data-initial="1.225">
+            <input id="airDensity" type="range" min="0" max="5" step="0.05" value="1.25" data-initial="1.25">
           </div>
           <div class="control">
             <div class="control__row">
