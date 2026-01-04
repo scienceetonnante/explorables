@@ -47,6 +47,14 @@
       "thumbnail": "thumbnail.png",
       "tags": ["physics", "mechanics", "astronomy"],
       "date": "2025-11-12"
+    },
+	{
+      "id": "gravity-blowup",
+      "title": "Singularity in Newtonian gravity",
+      "description": "Xia's mechanism for 5-body singularity",
+      "thumbnail": "thumbnail.png",
+      "tags": ["physics", "mechanics","differential equations"],
+      "date": "2025-11-12"
     }
   ]
 }

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Xia's mechanism for 5-body singularity in Newtonian gravity</title>
+  <script type="module" crossorigin src="./assets/index-DdoVH5dv.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-BTmLq5y6.css">
+</head>
+<body>
+  <header class="header container">
+    <h1 class="header__title">Xia's mechanism for 5-body singularity in Newtonian gravity</h1>
+  </header>
+
+  <main class="container grid-2">
+    <section class="panel">
+      <form class="form">
+        <div class="control-group">
+          <h3 class="control-group__label">Binary Configuration</h3>
+
+          <div class="control">
+            <div class="control__row">
+              <label class="control__label" for="binaryDistance">Binary Plane Distance (Z<sub>1</sub>)</label>
+              <span class="control__value" id="binaryDistanceValue">35.6</span>
+            </div>
+            <input id="binaryDistance" type="range" min="1" max="50" step="0.1" value="35.612631">
+          </div>
+
+          <div class="control">
+            <div class="control__row">
+              <label class="control__label" for="binaryEccentricity">Binary Eccentricity (e)</label>
+              <span class="control__value" id="binaryEccentricityValue">0.95</span>
+            </div>
+            <input id="binaryEccentricity" type="range" min="0.5" max="0.95" step="0.01" value="0.95">
+          </div>
+
+          <div class="control">
+            <div class="control__row">
+              <label class="control__label" for="binaryPhase">Upper Binary Phase (θ<sub>1</sub>)</label>
+              <span class="control__value" id="binaryPhaseValue">3.30 (apocenter+)</span>
+            </div>
+            <input id="binaryPhase" type="range" min="0" max="6.28318" step="0.01" value="3.295834">
+          </div>
+
+          <div class="control">
+            <div class="control__row">
+              <label class="control__label" for="enableSecondBinary">Enable Second Binary</label>
+              <input id="enableSecondBinary" type="checkbox" checked>
+            </div>
+          </div>
+
+          <div class="control">
+            <div class="control__row">
+              <label class="control__label" for="secondBinaryPhase">Lower Binary Phase (θ<sub>2</sub>)</label>
+              <span class="control__value" id="secondBinaryPhaseValue">4.42</span>
+            </div>
+            <input id="secondBinaryPhase" type="range" min="0" max="6.28318" step="0.01" value="4.419548">
+          </div>
+        </div>
+
+        <div class="control-group">
+          <h3 class="control-group__label">Shuttle Configuration</h3>
+
+          <div class="control">
+            <div class="control__row">
+              <label class="control__label" for="enableShuttle">Enable Shuttle</label>
+              <input id="enableShuttle" type="checkbox" checked>
+            </div>
+          </div>
+
+          <div class="control">
+            <div class="control__row">
+              <label class="control__label" for="shuttleMass">Shuttle Mass (M<sub>shuttle</sub>)</label>
+              <span class="control__value" id="shuttleMassValue">1.70</span>
+            </div>
+            <input id="shuttleMass" type="range" min="0.5" max="5" step="0.01" value="1.700371">
+          </div>
+
+          <div class="control">
+            <div class="control__row">
+              <label class="control__label" for="shuttlePosition">Shuttle Position (z<sub>0</sub>)</label>
+              <span class="control__value" id="shuttlePositionValue">0.0</span>
+            </div>
+            <input id="shuttlePosition" type="range" min="-10" max="40" step="0.5" value="0">
+          </div>
+
+          <div class="control">
+            <div class="control__row">
+              <label class="control__label" for="shuttleVelocity">Shuttle Velocity (v<sub>z,0</sub>)</label>
+              <span class="control__value" id="shuttleVelocityValue">0.35</span>
+            </div>
+            <input id="shuttleVelocity" type="range" min="0.05" max="1.0" step="0.01" value="0.349019">
+          </div>
+        </div>
+
+        <div class="control-group">
+          <h3 class="control-group__label">Simulation Control</h3>
+
+          <div class="control">
+            <div class="control__row">
+              <label class="control__label" for="simulationSpeed">Simulation Speed</label>
+              <span class="control__value" id="simulationSpeedValue">1.0x</span>
+            </div>
+            <input id="simulationSpeed" type="range" min="0.1" max="10" step="0.1" value="1">
+          </div>
+        </div>
+
+        <div class="row mt-2">
+          <button class="btn btn--primary" type="button" id="playPauseBtn">Play</button>
+          <button class="btn btn--secondary" type="button" id="resetBtn">Reset</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="viz panel">
+      <canvas id="viewport" width="800" height="600"></canvas>
+      <div class="camera-controls">
+        <span>Drag to rotate • Shift+Drag to pan • Scroll to zoom</span>
+      </div>
+      <div class="view-presets mt-2">
+        <button class="btn btn--secondary btn--small" type="button" id="viewTopBtn">Top View</button>
+        <button class="btn btn--secondary btn--small" type="button" id="viewSideBtn">Side View</button>
+      </div>
+    </section>
+  </main>
+
+</body>
+</html>
